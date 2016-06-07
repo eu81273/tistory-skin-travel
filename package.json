@@ -1,0 +1,28 @@
+{
+  "name": "tistory-skin-travel",
+  "version": "1.0.0",
+  "description": "Tistory Skin \"Travel\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eu81273/tistory-skin-travel.git"
+  },
+  "author": "AHN JAE-HA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eu81273/tistory-skin-travel/issues"
+  },
+  "homepage": "https://github.com/eu81273/tistory-skin-travel",
+  "devDependencies": {
+    "browser-sync": "^2.9.8",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-clean-css": "^2.0.9",
+    "gulp-plumber": "^1.0.1",
+    "gulp-uglify": "^1.2.0"
+  }
+}

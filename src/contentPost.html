@@ -1,0 +1,84 @@
+
+			<!-- 일반 포스팅 영역 -->
+			<s_article_rep>
+			<div class="blog-post-header-wrapper">
+				<div class="blog-post-header">
+					<!-- 포스팅 제목 -->
+					<img src="./images/compass.png">
+					<h2>[##_article_rep_title_##]</h2>
+					<span><strong><i class="fa fa-calendar"></i> [##_article_rep_date_##]</strong> <strong><i class="fa fa-folder-open"></i> <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></strong></span>
+				</div>
+			</div>
+
+			<div class="blog-post-content-wrapper">
+				<!-- 포스트 관리 -->
+				<s_ad_div>
+				<div class="blog-post-admin">
+					<div><i class="fa fa-flag"></i><span class="text-muted">이 포스팅은 현재 <strong class="text-danger">[##_s_ad_s1_label_##]</strong> 상태입니다.</span></div>
+					<div><a class="btn btn-warning btn-xs" href="[##_s_ad_m_link_##]"><i class="fa fa-pencil"></i>수정하기</a> <a id="delete" class="btn btn-danger btn-xs" href="[##_article_rep_link_##]"><i class="fa fa-trash-o"></i>삭제하기</a></div>
+				</div>
+				</s_ad_div>
+
+				<!-- 블로그 본문 -->
+				<div class="blog-post-content">
+					[##_article_rep_desc_##]
+				</div>
+
+				<!-- 태그 영역 -->
+				<s_tag_label>
+				<div class="blog-post-tags">
+					<div><span><i class="fa fa-tags"></i></span> [##_tag_label_rep_##]</div>
+				</div>
+				</s_tag_label>
+
+				<!-- 티스토리 코멘트 영역 -->
+				<div class="blog-post-comments">
+				<h3><b class="text-info">[##_article_rep_rp_cnt_##]</b> 개의 댓글 <small><i class="fa fa-comment text-danger"></i></small></h3>
+				<s_rp>
+					<s_rp_container><s_rp_rep>
+					<div id="[##_rp_rep_id_##]" class="blog-post-comment">
+						<div class="blog-post-comment-icon"><img src="//i1.daumcdn.net/thumb/C96x96/?fname=[##_rp_rep_logo_##]" width="48" height="48" class="img_profile" alt="프로필사진"></div>
+						<div class="blog-post-comment-head"><h4>[##_rp_rep_name_##] <small class="text-muted pull-right">[##_rp_rep_date_##]</small></h4></div>
+						<div class="blog-post-comment-text">
+							<p>[##_rp_rep_desc_##]</p>
+							<p><a class="label label-warning" href="#" onclick="[##_rp_rep_onclick_reply_##]">reply</a> <a class="label label-danger" href="#" onclick="[##_rp_rep_onclick_delete_##]">modify/remove</a></p>
+						</div>
+						<s_rp2_container><s_rp2_rep>
+							<div id="[##_rp_rep_id_##]" class="blog-post-comment">
+								<div class="blog-post-comment-icon"><img src="//i1.daumcdn.net/thumb/C96x96/?fname=[##_rp_rep_logo_##]" width="48" height="48" class="img_profile" alt="프로필사진"></div>
+								<div class="blog-post-comment-head"><h4>[##_rp_rep_name_##] <small class="text-muted pull-right">[##_rp_rep_date_##]</small></h4></div>
+								<div class="blog-post-comment-text">
+									<p>[##_rp_rep_desc_##]</p>
+									<p><a class="label label-warning" href="#" onclick="[##_rp_rep_onclick_reply_##]">reply</a> <a class="label label-danger" href="#" onclick="[##_rp_rep_onclick_delete_##]">modify/remove</a></p>
+								</div>
+							</div>
+						</s_rp2_rep></s_rp2_container>
+					</div>
+					</s_rp_rep></s_rp_container>
+
+
+					<s_rp_input_form>
+					<div class="blog-post-comment-entry">
+						<h3>댓글 남기기 <small><i class="fa fa-pencil text-muted"></i></small></h3>
+						<s_rp_member>
+						<s_rp_guest>
+						<div class="form-group">
+							<input id="name" class="comment-input" name="[##_rp_input_name_##]" placeholder="이름" value="[##_guest_name_##]" type="text" value=""/><br/>
+							<input id="pass" class="comment-input" name="[##_rp_input_password_##]" placeholder="패스워드" value="" type="password"/><br/>
+							<input id="url" name="[##_rp_input_homepage_##]" class="comment-input"  placeholder="홈페이지" value="[##_guest_homepage_##]" type="text" />
+						</div>
+						</s_rp_guest>
+						</s_rp_member>
+						<div class="form-group">
+							<textarea id="comment" name="[##_rp_input_comment_##]" cols="45" rows="8" class="comment-textarea"></textarea>
+						</div>
+						<div class="form-group">
+							<input name="submit" type="submit" id="submit" value="Post Comment" class="btn btn-warning" onclick="[##_rp_onclick_submit_##]" />
+						</div>
+					</div>
+					</s_rp_input_form>
+				</s_rp>
+				</div>
+
+			</div>
+			</s_article_rep>

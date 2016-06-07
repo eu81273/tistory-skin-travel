@@ -1,0 +1,1117 @@
+/* --------------------------------
+
+전역 스타일
+
+-------------------------------- */
+
+/* 모든 객체에 적용할 스타일 */
+*, *::after, *::before {
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+
+	outline: 0;
+}
+
+/* 선택 가능 영역 설정 */
+input, textarea, pre *	{
+	-webkit-touch-callout:default;
+	-webkit-user-select:text;
+	-moz-user-select:text;
+	-ms-user-select:text;
+	user-select:text;
+}
+
+/* 기본 폰트 및 배경 설정 */
+body {
+	font-family: 'Hanna', 'Malgun Gothic';
+	/*font-family: 'Noto Sans KR', 'Malgun Gothic';*/
+	font-size: 1.5rem;
+	color: #000000;
+	background-color: #403438;
+	overflow: hidden;
+}
+
+/* 화면 넓이가 768 보다 크면, */
+@media only screen and (min-width: 768px) {
+
+	/* 링크 및 버튼에 애니메이션 추가 */
+	a, .btn {
+		-webkit-transition: all .3s ease 0s;
+		-moz-transition: all .3s ease 0s;
+		transition: all .3s ease 0s;
+	}
+}
+
+
+/* 텍스트 데코레이션 제거 */
+a:focus, a:hover {
+	text-decoration: none;
+}
+
+/* 아이콘에 오른쪽 마진 추가 */
+i {
+	margin-right: .8rem;
+}
+
+/* 다음 툴바 제거 */
+#tistorytoolbarid {
+	display: none;
+}
+
+
+
+/* 배경 사진 */
+.background-picture-left {
+	display: none;
+}
+
+.background-picture-center {
+	display: none;
+}
+
+.background-picture-right {
+	display: none;
+}
+
+/* 화면 넓이가 768 보다 크면, */
+@media only screen and (min-width: 768px) {
+	.background-picture-left {
+		display: block;
+		position: fixed;
+		z-index: 0;
+		top: 150px;
+		left: 0;
+		opacity: 0;
+		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
+		border: 10px solid rgb(255, 255, 255);
+		transform: rotate(-5deg);
+		-webkit-transition: -webkit-transform .5s, opacity .5s;
+		-moz-transition: -moz-transform .5s, opacity .5s;
+		transition: transform .5s, opacity .5s;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+		.background-picture-left.is-visible {
+			opacity: 1;
+			transform: rotate(10deg);
+		}
+
+	.background-picture-center {
+		display: block;
+		position: fixed;
+		z-index: 0;
+		top: 250px;
+		left: 400px;
+		opacity: 0;
+		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
+		border: 10px solid rgb(255, 255, 255);
+		transform: rotate(10deg);
+		-webkit-transition: -webkit-transform 1s, opacity 1s;
+		-moz-transition: -moz-transform 1s, opacity 1s;
+		transition: transform 1s, opacity 1s;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+		.background-picture-center.is-visible {
+			opacity: 1;
+			transform: rotate(-10deg);
+		}
+
+	.background-picture-right {
+		display: block;
+		position: fixed;
+		z-index: 0;
+		top: 150px;
+		left: 900px;
+		opacity: 0;
+		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
+		border: 10px solid rgb(255, 255, 255);
+		transform: rotate(-10deg);
+		-webkit-transition: -webkit-transform 1.5s, opacity 1.5s;
+		-moz-transition: -moz-transform 1.5s, opacity 1.5s;
+		transition: transform 1.5s, opacity 1.5s;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+		.background-picture-right.is-visible {
+			opacity: 1;
+			transform: rotate(10deg);
+		}
+}
+
+
+
+/* --------------------------------
+
+IE 9 이하 호환성 안내 메시지
+
+-------------------------------- */
+
+.ie-overlay {
+	height:100%;
+	width:100%;
+
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background-color: #FFFFFF;
+
+	visibility: visible;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	cursor: not-allowed;
+	z-index: 9999;
+}
+	.ie-overlay .ie-overlay-message {
+		position: relative;
+		top: 20%;
+		text-align: center;
+		padding: 50px 100px;
+	}
+		.ie-overlay .ie-overlay-message h2 {
+			font-size: 4em;
+			font-weight: 300;
+			color: #000000;
+		}
+		.ie-overlay .ie-overlay-message h4 {
+			font-size: 2em;
+			font-weight: 300;
+			color: #333333;
+		}
+
+/* --------------------------------
+
+메인 컴포넌트
+
+-------------------------------- */
+
+/* 로고 */
+.blog-logo {
+	display: block;
+	position: absolute;
+	top: 34px;
+	left: 5%;
+	bottom: auto;
+	z-index: 3;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: #ffc107;
+	opacity: 1;
+	padding: 3px 11px 1px;
+	-webkit-transition: top .5s ease, opacity .2s ease;
+	border-radius: 5px;
+	-moz-transition: top .5s ease, opacity .2s ease;
+	transition: top .5s ease, opacity .2s ease;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* 화면 넓이가 768 보다 크면, */
+@media only screen and (min-width: 768px) {
+	.blog-logo {
+		top: 60px;
+	}
+
+	/* 마우스 오버시 */
+	.blog-logo:hover {
+		/*padding: 6px 14px 4px;*/
+		opacity: .9;
+		cursor: pointer;
+	}
+}
+
+	.blog-logo a {
+		color: rgb(255, 255, 255);
+		text-decoration: none;
+	}
+
+/* 스크롤시 숨김을 위한 클래스 */
+.blog-logo.is-hide {
+	top: -100px;
+}
+
+
+/* 메뉴 아이콘 */
+.blog-open-nav {
+	position: absolute;
+	z-index: 3;
+	top: 12px;
+	right: 8%;
+
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 43px;
+	height: 43px;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform 0.2s, top .5s ease, background .2s ease;
+	-moz-transition: -moz-transform 0.2s, top .5s ease, background .2s ease;
+	transition: transform 0.2s, top .5s ease, background .2s ease;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* 스크롤시 숨김을 위한 클래스 */
+.blog-open-nav.is-hide {
+	top: -100px;
+}
+
+.blog-open-nav:focus {
+	outline: none;
+}
+
+	.blog-open-nav span {
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: 9px;
+		right: 9px;
+		height: 4px;
+		background: white;
+	}
+
+	.blog-open-nav span::before,
+	.blog-open-nav span::after {
+		position: absolute;
+		display: block;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background-color: #fff;
+		content: "";
+	}
+
+	.blog-open-nav span::before {
+		top: -10px;
+	}
+
+	.blog-open-nav span::after {
+		bottom: -10px;
+	}
+
+	.blog-open-nav-arrow {
+		background-color: rgba(0, 0, 29, 0.6);
+	}
+
+	.blog-open-nav-arrow span {
+		transition: transform 0.3s;
+	}
+
+	.blog-open-nav-arrow span::before {
+		transform-origin: top right;
+		transition: transform 0.3s, width 0.3s, top 0.3s;
+	}
+
+	.blog-open-nav-arrow span::after {
+		transform-origin: bottom right;
+		transition: transform 0.3s, width 0.3s, bottom 0.3s;
+	}
+
+/* 화면 넓이가 768 보다 크면, */
+@media only screen and (min-width: 768px) {
+	.blog-open-nav {
+		top: 38px;
+	}
+
+	/* active state, i.e. menu open */
+	.blog-open-nav-arrow:hover {
+		background-color: rgba(0, 0, 29, 0.8);
+	}
+
+	.blog-open-nav-arrow:hover span {
+		transform: rotate(180deg);
+	}
+
+	.blog-open-nav-arrow:hover span::before,
+	.blog-open-nav-arrow:hover span::after {
+		width: 70%;
+	}
+
+	.blog-open-nav-arrow:hover span::before {
+		top: 0;
+		transform: translateX(10px) translateY(2px) rotate(45deg);
+	}
+
+	.blog-open-nav-arrow:hover span::after {
+		bottom: 0;
+		transform: translateX(10px) translateY(-2px) rotate(-45deg);
+	}
+
+}
+
+
+/* --------------------------------
+
+사이드 네비게이션 메뉴
+
+-------------------------------- */
+
+/* 사이드 메뉴 */
+nav {
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	background-color: #ffffff;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(100%,0,0);
+	-moz-transform: translate3d(100%,0,0);
+	-ms-transform: translate3d(100%,0,0);
+	-o-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+	-webkit-transition: -webkit-transform .4s ease 0s;
+	-moz-transition: -moz-transform .4s ease 0s;
+	transition: transform .4s ease 0s;
+}
+
+nav.is-visible {
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-overflow-scrolling: touch;
+}
+
+/* 화면 넓이가 768 보다 크면, */
+@media only screen and (min-width: 768px) {
+	nav {
+		width: 550px;
+		-webkit-transition: -webkit-transform .4s ease 0s, box-shadow .4s ease 0s;
+		-moz-transition: -moz-transform .4s ease 0s, box-shadow .4s ease 0s;
+		transition: transform .4s ease 0s, box-shadow .4s ease 0s;
+	}
+
+	nav.is-visible {
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		-o-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		-webkit-overflow-scrolling: touch;
+		box-shadow:-20px 0 40px rgba(0, 0, 0, 0.6);
+	}
+}
+
+
+	nav .blog-nav-header {
+		position: relative;
+		height: 80px;
+	}
+
+		/* 사이드 메뉴의 검색 입력 */
+		nav .blog-nav-header .blog-nav-search {
+			position: absolute;
+			width: 70%;
+			height: 44px;
+			left: 3%;
+			top: 16px;
+		}
+
+		/* 화면 넓이가 768 보다 크면, */
+		@media only screen and (min-width: 768px) {
+			nav .blog-nav-header .blog-nav-search {
+				left: 5%;
+				top: 26px;
+			}
+		}
+
+
+			nav .blog-nav-header .blog-nav-search .input-group-addon {
+				background-color: inherit;
+				border: none;
+				border-radius: 0;
+				font-size: 1.8em;
+			}
+
+			nav .blog-nav-header .blog-nav-search .form-control {
+
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-bottom: 1px solid #ccc;
+				border-radius: 0;
+				box-shadow: none;
+				padding: 10px 5px;
+			}
+
+
+
+		/* 사이드 메뉴의 닫기 버튼 */
+		nav .blog-nav-header .blog-close-nav {
+			position: absolute;
+			height: 44px;
+			width: 44px;
+			right: 5%;
+			top: 38px;
+			bottom: auto;
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+			overflow: hidden;
+			text-indent: 100%;
+			white-space: nowrap;
+			-webkit-transition: opacity 0.2s;
+			-moz-transition: opacity 0.2s;
+			transition: opacity 0.2s;
+			cursor: pointer;
+		}
+			nav .blog-nav-header .blog-close-nav::after, nav .blog-nav-header .blog-close-nav::before {
+				content: '';
+				position: absolute;
+				height: 4px;
+				width: 32px;
+				left: 50%;
+				top: 50%;
+				background-color: #5c4b51;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			nav .blog-nav-header .blog-close-nav::after {
+				-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			}
+			nav .blog-nav-header .blog-close-nav::before {
+				-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+				-moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+				-ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+				-o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+				transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+			}
+
+			/* 화면 넓이가 768 보다 크면, */
+			@media only screen and (min-width: 768px) {
+				nav .blog-nav-header .blog-close-nav {
+					top: 50px;
+				}
+
+				nav .blog-nav-header .blog-close-nav:hover {
+					opacity: .7;
+				}
+			}
+
+
+	/* 사이드 메뉴 섹션 */
+	nav .blog-nav-content {
+		padding: 10% 10% 30%;
+	}
+
+		nav .blog-nav-content .nav-component-wrapper {
+			margin-top: 7rem;
+		}
+
+		nav .blog-nav-content .nav-component-wrapper:first-child {
+			margin-top: 0;
+		}
+
+			/* 카테고리 */
+			nav .blog-nav-content .nav-component-wrapper .nav-component-category {
+				margin-top: 2rem;
+			}
+				nav .blog-nav-content .nav-component-wrapper .nav-component-category ul {
+					list-style: disc inside none;
+					margin-left: 3rem;
+					opacity: .6;
+				}
+				nav .blog-nav-content .nav-component-wrapper .nav-component-category ul:first-child {
+					margin-left: 0;
+					opacity: 1;
+				}
+				nav .blog-nav-content .nav-component-wrapper .nav-component-category li a {
+					color: #333333;
+					text-decoration: none;
+					line-height: 200%;
+				}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-category li a:hover {
+						color: #337ab7;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-category li .c_cnt {
+						color: #aaa;
+						font-size: .8rem;
+					}
+
+				/* 화면 넓이가 768 보다 크면, */
+				@media only screen and (min-width: 768px) {
+					nav .blog-nav-content .nav-component-wrapper .nav-component-category li a:hover {
+						padding-left: 0.5rem;
+					}
+				}
+
+			/* 최근 글/ 최근 댓글 */
+			nav .blog-nav-content .nav-component-wrapper .nav-component-list {
+				margin-top: 2rem;
+			}
+				nav .blog-nav-content .nav-component-wrapper .nav-component-list .nav-component-list-item {
+					font-size: 1.5rem;
+					line-height: 250%;
+					transition: all .2s ease 0s;
+				}
+
+					nav .blog-nav-content .nav-component-wrapper .nav-component-list .nav-component-list-item a {
+						color: #888888;
+						text-decoration: none;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-list .nav-component-list-item a:hover {
+						color: #337ab7;
+					}
+
+				/* 화면 넓이가 768 보다 크면, */
+				@media only screen and (min-width: 768px) {
+					nav .blog-nav-content .nav-component-wrapper .nav-component-list .nav-component-list-item:hover {
+						padding-left: 0.5rem;
+					}
+				}
+
+			/* 태그 */
+			nav .blog-nav-content .nav-component-wrapper .nav-component-tag {
+				margin-top: 2rem;
+				text-transform: uppercase;
+				line-height: 4rem;
+
+				/* break word */
+				-ms-word-break: break-all;
+				word-break: break-all;
+				word-break: break-word;
+				-webkit-hyphens: auto;
+				-moz-hyphens: auto;
+				hyphens: auto;
+			}
+				nav .blog-nav-content .nav-component-wrapper .nav-component-tag span {
+					display: inline-block;
+					padding: 0 .5rem;
+				}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span:first-child {
+						padding-left: 0;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span:last-child {
+						padding-right: 0;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span.cloud1 {
+						font-size: 3.5rem;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span.cloud2 {
+						font-size: 3rem;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span.cloud3 {
+						font-size: 2.5rem;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span.cloud4 {
+						font-size: 2rem;
+					}
+					nav .blog-nav-content .nav-component-wrapper .nav-component-tag span.cloud5 {
+						font-size: 1.5rem;
+					}
+
+			/* 기타 */
+			nav .blog-nav-content .nav-component-wrapper .nav-component-etc {
+				margin-top: 2rem;
+			}
+
+
+/* --------------------------------
+
+사이드 네비게이션 메뉴 활성화때 오버레이
+
+-------------------------------- */
+.blog-overlay {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+	opacity: 0;
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+	.blog-overlay.is-visible {
+		opacity: 1;
+		visibility: visible;
+
+		z-index: 2;
+	}
+
+	/* 화면 넓이가 768 보다 크면, */
+	@media only screen and (min-width: 768px) {
+		.blog-overlay {
+			-webkit-transition: opacity 0.4s;
+			-moz-transition: opacity 0.4s;
+			transition: opacity 0.4s;
+		}
+	}
+/* --------------------------------
+
+컨텐츠
+
+-------------------------------- */
+article {
+	position: relative;
+	height: 100vh;
+	overflow-x: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 1.2s ease;
+	-moz-transition: -moz-transform 1.2s ease;
+	transition: transform 1.2s ease;
+}
+
+	article.scale-down {
+	}
+
+	@media only screen and (min-width: 768px) {
+		article.scale-down {
+			border: 20px solid rgb(255, 255, 255);
+			box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
+			-moz-transform: scale(.5) rotate(-3deg) translateX(-30%);
+			-ms-transform: scale(.5) rotate(-3deg) translateX(-30%);
+			-o-transform: scale(.5) rotate(-3deg) translateX(-30%);
+			transform: scale(.5) rotate(-3deg) translateX(-30%);
+		}
+	}
+
+
+
+/* --------------------------------
+
+컨텐츠 > 일반 포스팅
+
+-------------------------------- */
+	article .blog-post {
+		position: relative;
+		z-index: 1;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
+		-webkit-transition: -webkit-transform 0s 0.4s;
+		-moz-transition: -moz-transform 0s 0.4s;
+		transition: transform 0s 0.4s;
+		-webkit-overflow-scrolling: touch;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	article.scale-down .blog-post {
+		-webkit-backface-visibility: visible;
+		backface-visibility: visible;
+		overflow-y: hidden;
+	}
+
+		article .blog-post .blog-post-header-wrapper {
+			height: 100vh;
+			background: #556655;
+			background-image: url(./images/background.png);
+			/*box-shadow: 0 -10px 80px rgba(0, 0, 0, .6) inset;*/
+			position: relative;
+		}
+
+			article .blog-post .blog-post-header-wrapper .blog-post-header {
+				position: relative;
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+				color: #ffffff;
+				text-align: center;
+			}
+
+				article .blog-post .blog-post-header-wrapper .blog-post-header img {
+					width: 8rem;
+					margin: 0 0 2em 0;
+				}
+
+				article .blog-post .blog-post-header-wrapper .blog-post-header h2 {
+					font-size: 4.5rem;
+					text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					margin: 0 0.8em;
+
+					/* break word */
+					-ms-word-break: break-word;
+					word-break: break-word;
+					word-wrap: break-word;
+					-webkit-hyphens: auto;
+					-moz-hyphens: auto;
+					hyphens: auto;
+				}
+				article .blog-post .blog-post-header-wrapper .blog-post-header span {
+					display: inline-block;
+					margin: 2em;
+					padding: 10px 30px;
+					background: rgba(0,0,0,0.3);
+					border-radius: 10px;
+				}
+					article .blog-post .blog-post-header-wrapper .blog-post-header span strong {
+						display: block;
+					}
+
+						article .blog-post .blog-post-header-wrapper .blog-post-header span strong a {
+							color: white;
+							text-decoration: none;
+						}
+
+						article .blog-post .blog-post-header-wrapper .blog-post-header span strong a:hover {
+							color: #337ab7;
+						}
+
+				@media only screen and (min-width: 768px) {
+					article .blog-post .blog-post-header-wrapper .blog-post-header img {
+						width: 10rem;
+					}
+
+					article .blog-post .blog-post-header-wrapper .blog-post-header h2 {
+						font-size: 8rem;
+						font-weight: 300;
+						margin: auto 15vw;
+					}
+
+					article .blog-post .blog-post-header-wrapper .blog-post-header span {
+						margin: 3em;
+						border-radius: 15px;
+					}
+
+						article .blog-post .blog-post-header-wrapper .blog-post-header span strong {
+							display: inline-block;
+							margin-right: 20px;
+						}
+
+							article .blog-post .blog-post-header-wrapper .blog-post-header span strong:last-child {
+								margin-right: 0;
+							}
+				}
+
+
+
+
+		article .blog-post .blog-post-content-wrapper {
+			background-color: #ffffff;
+			padding: 4em 0;
+			min-height: 100vh;
+			font-size: 1.8rem;
+
+			/* break word */
+			-ms-word-break: break-all;
+			word-break: break-all;
+			word-break: break-word;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+
+			article .blog-post .blog-post-content-wrapper .blog-post-admin {
+				width: 90%;
+				max-width: 1000px;
+				margin: 1em auto 5em;
+				border-bottom: 1px dashed #cccccc;
+			}
+				article .blog-post .blog-post-content-wrapper .blog-post-admin div:first-child {
+					padding: 0 0 1em 0;
+				}
+				article .blog-post .blog-post-content-wrapper .blog-post-admin div:last-child {
+					padding: 0 0 3em 0;
+				}
+
+				@media only screen and (min-width: 768px) {
+					article .blog-post .blog-post-content-wrapper .blog-post-admin div:first-child {
+						display: inline-block;
+						padding: 0 1em 3em 0;
+					}
+					article .blog-post .blog-post-content-wrapper .blog-post-admin div:last-child {
+						display: inline-block;
+						padding: 0 0 3em 0;
+					}
+				}
+
+			article .blog-post .blog-post-content-wrapper .blog-post-content {
+				width: 90%;
+				max-width: 1000px;
+				margin: 2em auto;
+				line-height: 180%;
+				color: #555;
+			}
+
+				/* 포스팅 내 이미지 */
+				article .blog-post .blog-post-content-wrapper .blog-post-content img {
+					display: block;
+					max-width: 100%;
+					margin: 0 auto;
+					border: 1px solid black;
+				}
+
+				/* 포스팅 내 코드 */
+				article .blog-post .blog-post-content-wrapper .blog-post-content pre {
+					font-size: 1.5rem;
+					padding: 2.5em;
+					border: none;
+					border-radius: 0.8em;
+				}
+					article .blog-post .blog-post-content-wrapper .blog-post-content pre * {
+						font-family: 'Nanum Gothic Coding';
+						font-weight: bold;
+					}
+
+				/* 포스팅 내 blockquote */
+				article .blog-post .blog-post-content-wrapper .blog-post-content blockquote {
+					font-size: inherit;
+				}
+
+				/* 포스팅 내 hr */
+				article .blog-post .blog-post-content-wrapper .blog-post-content hr {
+					margin: 50px auto;
+					max-width: 30%;
+					border-color: #dde0e3;
+					border: 0;
+					border-top: 1px solid #999;
+				}
+
+				/* 티스토리 카테고리 글 스타일 트윅 */
+				article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category {
+					border-top:1px solid #E5E5E5;
+					border-bottom:1px solid #E5E5E5;
+					border-left:none;
+					border-right:none;
+					clear:both;
+					margin:5rem 0;
+					padding:5rem 0;
+				}
+					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category * {
+						color: inherit !important;
+					}
+					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category h4 {
+						border-bottom: none !important;
+						font-size: 2.3rem !important;
+						margin: 0 0 1em!important;
+					}
+					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th {
+						font-size: 1.5rem !important;
+						word-break: break-all;
+					}
+						article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th span {
+							display: none;
+						}
+						article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th a.current {
+							border: none !important;
+						}
+					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category a:hover {
+						opacity: .7;
+					}
+
+
+			/* 태그 */
+			article .blog-post .blog-post-content-wrapper .blog-post-tags {
+				width: 90%;
+				max-width: 1000px;
+				margin: 2em auto;
+				text-transform: uppercase;
+			}
+
+			/* 댓글 */
+			article .blog-post .blog-post-content-wrapper .blog-post-comments {
+				width: 90%;
+				max-width: 1000px;
+				margin: 6em auto 2em;
+				font-size: 1.6rem;
+			}
+
+				article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment-entry {
+					margin: 1em 0 2em;
+				}
+					article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment-entry .comment-input {
+						border-radius: 3px;
+						border: none;
+						background: #EEEEEE;
+						padding: .3em .5em;
+						margin: 0 0 1em;
+					}
+
+					article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment-entry .comment-textarea {
+						width: 100%;
+						border-radius: 5px;
+						border: none;
+						background: #EEEEEE;
+						padding: 1em;
+					}
+
+				article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment {
+					margin-top: 10px;
+					position: relative;
+					padding: 30px 0 5px 65px;
+					border-top: 1px dashed #ccc;
+				}
+					article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment .blog-post-comment-icon {
+						width: 48px;
+						height: 48px;
+						position: absolute;
+						top: 25px;
+						left: 0;
+					}
+					article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment .blog-post-comment-head {
+						margin: 10px 0 5px;
+						width: 100%;
+						clear: both;
+						font-weight: 700;
+					}
+						article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment .blog-post-comment-head .tistoryProfileLayerTrigger {
+							display: none;
+						}
+
+					article .blog-post .blog-post-content-wrapper .blog-post-comments .blog-post-comment .blog-post-comment-text {
+
+						line-height: 180%;
+						font-size: 1.6rem;
+						color: #5c5c5c;
+					}
+
+			/* 검색 결과 */
+			article .blog-post .blog-post-content-wrapper .blog-post-list {
+				width: 90%;
+				max-width: 1000px;
+				margin: 4em auto;
+				line-height: 200%;
+			}
+				article .blog-post .blog-post-content-wrapper .blog-post-list ul {
+					list-style: none;
+				}
+					article .blog-post .blog-post-content-wrapper .blog-post-list ul li {
+						margin: 0 1em 5em;
+					}
+
+				/* 화면 넓이가 768 보다 크면, */
+				@media only screen and (min-width: 768px) {
+					article .blog-post .blog-post-content-wrapper .blog-post-list ul li {
+						-webkit-transition: padding .3s ease 0s;
+						-moz-transition: padding .3s ease 0s;
+						transition: padding .3s ease 0s;
+					}
+					article .blog-post .blog-post-content-wrapper .blog-post-list ul li:hover {
+						padding-left: .5rem;
+					}
+				}
+
+		/* 삭제된 게시글 */
+		article .blog-post > div:not([class]) {
+			background-color: #ffffff;
+			padding: 4em 0;
+			height: 100vh;
+		}
+			article .blog-post > div:not([class]) .absent_post {
+				position: relative;
+				top: 45%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+
+		/* 페이징 */
+		article .blog-post .blog-post-pagination-wrapper {
+			background-color: #ffffff;
+			padding: 2em 0 4em;
+		}
+			article .blog-post .blog-post-pagination-wrapper .blog-post-pages {
+				width: 90%;
+				max-width: 1000px;
+				margin: 1em auto;
+				text-align: center;
+			}
+
+				/* ... 이 안으로 들어가도록 */
+				article .blog-post .blog-post-pagination-wrapper .blog-post-pages .interword {
+					float:left;
+				}
+
+				/* 현재 페이지 */
+				article .blog-post .blog-post-pagination-wrapper .blog-post-pages a:not([href]) {
+					cursor: not-allowed;
+					opacity: .5;
+				}
+
+				/* 테두리 제거 */
+				article .blog-post .blog-post-pagination-wrapper .blog-post-pages .pagination li * {
+					border: none;
+				}
+
+		/* 풋터 */
+		article .blog-post .blog-post-footer-wrapper {
+			height: 30vh;
+			min-height: 200px;
+			background: #445544;
+			background-image: url(./images/background.png);
+			/*box-shadow: 0 10px 80px rgba(0, 0, 0, .6) inset;*/
+			position: relative;
+		}
+			article .blog-post .blog-post-footer-wrapper .blog-post-footer {
+				position: relative;
+				top: 45%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+				width: 90%;
+				max-width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			article .blog-post .blog-post-footer-wrapper .blog-post-footer h4 {
+				color: #ffffff;
+				text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			/* 부트스트랩 기본값으로 인해 여백이 보이는 문제 수정 */
+			article .blog-post .blog-post-footer-wrapper .blog-post-footer h3, article .blog-post .blog-post-footer-wrapper .blog-post-footer h4 {
+				margin-top: 0;
+				margin-bottom: 0;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+
+			article .blog-post .blog-post-footer-wrapper .blog-post-footer .btn-xs {
+				padding: 3px 5px 0;
+			}

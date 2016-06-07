@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+	<title>[##_page_title_##] | [##_title_##]</title>
+
+	<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+	<link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="./style.css" rel="stylesheet">
+
+	<!-- 웹폰트 -->
+	<link href="//fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet">
+	<!-- <link href="//fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+
+<s_t3>
+
+	<!--[if lte IE 9]>
+	<div class="ie-overlay">
+		<div class="ie-overlay-message">
+			<h2>Internet Explorer 9 이하에서는<br>블로그가 정상적으로 보이지 않습니다.</h2>
+			<h4>Google Chrome 등 웹표준을 지원하는 브라우저를 사용해주세요.</h4>
+		</div>
+	</div>
+	<![endif]-->
+
+	<div class="background-picture-left"><img src="./images/picture01.jpg"></div>
+	<div class="background-picture-center"><img src="./images/picture02.jpg"></div>
+	<div class="background-picture-right"><img src="./images/picture03.jpg"></div>
+
+	<!-- 로고 -->
+	<div class="blog-logo" title="[##_desc_##]"><h4><a href="[##_blog_link_##]">[##_title_##]</a></h4></div>
+
+	<!-- 플로팅 메뉴 영역 -->
+	<nav>
+		<div class="blog-nav-header">
+			<!-- 검색 입력폼 -->
+			<div class="blog-nav-search">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-search"></i></span>
+						<s_search>
+						<input type="text" id="search" class="form-control input-lg">
+						</s_search>
+					</div>
+				</div>
+			</div>
+
+			<!-- 메뉴 닫기 버튼 -->
+			<div class="blog-close-nav">Close</div>
+		</div>
+
+		<div class="blog-nav-content">
+		<s_sidebar>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 공지사항 -->
+			<div class="nav-component-wrapper">
+				<h3>Notices <small><i class="fa fa-exclamation-circle text-danger"></i></small></h3>
+				<div class="nav-component-list">
+					<s_rct_notice><s_rct_notice_rep>
+					<div class="nav-component-list-item"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></div>
+					</s_rct_notice_rep></s_rct_notice>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 카테고리 -->
+			<div class="nav-component-wrapper">
+				<h3>Categories <small><i class="fa fa-folder-open text-primary"></i></small></h3>
+				<div class="nav-component-category">
+					[##_category_list_##]
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 최근 글 -->
+			<div class="nav-component-wrapper">
+				<h3>Recent Posts <small><i class="fa fa-file-text text-success"></i></small></h3>
+				<div class="nav-component-list">
+					<s_rctps_rep>
+					<div class="nav-component-list-item"><a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a></div>
+					</s_rctps_rep>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 최근 댓글 -->
+			<div class="nav-component-wrapper">
+				<h3>Recent Comments <small><i class="fa fa-comment text-danger"></i></small></h3>
+				<div class="nav-component-list">
+					<s_rctrp_rep>
+					<div class="nav-component-list-item"><a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a> <small class="text-danger">[##_rctrp_rep_name_##]</small></div>
+					</s_rctrp_rep>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 태그 -->
+			<div class="nav-component-wrapper">
+				<h3>Tags <small><i class="fa fa-tags text-info"></i></small></h3>
+				<div class="nav-component-tag">
+					<s_random_tags>
+						<span class="[##_tag_class_##]"><a href="[##_tag_link_##]"> [##_tag_name_##]</a></span>
+					</s_random_tags>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 카운터 -->
+			<div class="nav-component-wrapper">
+				<h3>Visitors <small><i class="fa fa-bar-chart"></i></small></h3>
+				<div class="nav-component-etc">
+					<div>어제는 <strong class="text-info">[##_count_yesterday_##]</strong> 명</div>
+					<div>오늘은 <strong class="text-info">[##_count_today_##]</strong> 명</div>
+					<div>지금까지 <strong class="text-info">[##_count_total_##]</strong> 명</div>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+			<s_sidebar_element>
+			<!-- 사이드바: 관리자 -->
+			<div class="nav-component-wrapper">
+				<h3>Administrator <small><i class="fa fa-wrench text-warning"></i></small></h3>
+				<div class="nav-component-etc">
+					<a href="[##_owner_url_##]/entry/post" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i>글쓰기</a> <a href="[##_owner_url_##]" class="btn btn-danger btn-sm"><i class="fa fa-lock"></i>관리자</a>
+				</div>
+			</div>
+			</s_sidebar_element>
+
+		</s_sidebar>
+		</div>
+
+	</nav>
+
+
+	<!-- 메뉴 오버레이 -->
+	<div class="blog-overlay"></div>
+
+
+	<!-- 컨텐츠 영역 -->
+	<article>
+		<!-- 메뉴 버튼 -->
+		<div class="blog-open-nav blog-open-nav-arrow">
+			<span>toggle menu</span>
+		</div>
+
+		<!-- 본문 영역 -->
+		<div class="blog-post">

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>여행 블로그 스킨</name>
+		<version>1.0.0</version>
+		<description>
+			<![CDATA[ 여행 블로그 스킨 (http://programmingsummaries.tistory.com) ]]>
+		</description>
+		<license>
+			<![CDATA[ MIT ]]>
+		</license>
+	</information>
+	<author>
+		<name>AHN JAE-HA</name>
+		<homepage>http://programmingsummaries.tistory.com</homepage>
+		<email>eu81273@gmail.com</email>
+	</author>
+	<default>
+		<recentEntries>30</recentEntries>
+		<recentComments>30</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>5</itemsOnGuestbook>
+		<tagsInCloud>40</tagsInCloud>
+		<sortInCloud>1</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>0</expandTrackback>
+		<lengthOfRecentNotice>34</lengthOfRecentNotice>
+		<lengthOfRecentEntry>34</lengthOfRecentEntry>
+		<lengthOfRecentComment>34</lengthOfRecentComment>
+		<lengthOfRecentTrackback>34</lengthOfRecentTrackback>
+		<lengthOfLink>34</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<commentMessage>
+			<none>Leave a Comment</none>
+			<single>1 Commnet</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>Leave a Trackback</none>
+			<single>1 Trackback</single>
+		</trackbackMessage>
+		<tree>
+			<color>000000</color>
+			<bgColor>ffffff</bgColor>
+			<activeColor>000000</activeColor>
+			<activeBgColor>eeeeee</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>1000</contentWidth>
+		<layout>1</layout>
+	</default>
+</skin>
