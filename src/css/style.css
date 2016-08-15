@@ -880,6 +880,13 @@ article {
 					border: 1px solid black;
 				}
 
+				/* 포스팅 자막 */
+				article .blog-post .blog-post-content-wrapper .blog-post-content .cap1 {
+					font-size: 1.6rem;
+					margin: 0 auto;
+					color: #999;
+				}
+
 				/* 포스팅 내 코드 */
 				article .blog-post .blog-post-content-wrapper .blog-post-content pre {
 					font-size: 1.5rem;
