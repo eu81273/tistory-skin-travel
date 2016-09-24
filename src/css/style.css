@@ -62,91 +62,6 @@ i {
 }
 
 
-
-/* 배경 사진 */
-.background-picture-left {
-	display: none;
-}
-
-.background-picture-center {
-	display: none;
-}
-
-.background-picture-right {
-	display: none;
-}
-
-/* 화면 넓이가 768 보다 크면, */
-@media only screen and (min-width: 768px) {
-	.background-picture-left {
-		display: block;
-		position: fixed;
-		z-index: 0;
-		top: 150px;
-		left: 0;
-		opacity: 0;
-		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
-		border: 10px solid rgb(255, 255, 255);
-		transform: rotate(-5deg);
-		-webkit-transition: -webkit-transform .5s, opacity .5s;
-		-moz-transition: -moz-transform .5s, opacity .5s;
-		transition: transform .5s, opacity .5s;
-
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-	}
-		.background-picture-left.is-visible {
-			opacity: 1;
-			transform: rotate(10deg);
-		}
-
-	.background-picture-center {
-		display: block;
-		position: fixed;
-		z-index: 0;
-		top: 250px;
-		left: 400px;
-		opacity: 0;
-		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
-		border: 10px solid rgb(255, 255, 255);
-		transform: rotate(10deg);
-		-webkit-transition: -webkit-transform 1s, opacity 1s;
-		-moz-transition: -moz-transform 1s, opacity 1s;
-		transition: transform 1s, opacity 1s;
-
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-	}
-		.background-picture-center.is-visible {
-			opacity: 1;
-			transform: rotate(-10deg);
-		}
-
-	.background-picture-right {
-		display: block;
-		position: fixed;
-		z-index: 0;
-		top: 150px;
-		left: 900px;
-		opacity: 0;
-		box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
-		border: 10px solid rgb(255, 255, 255);
-		transform: rotate(-10deg);
-		-webkit-transition: -webkit-transform 1.5s, opacity 1.5s;
-		-moz-transition: -moz-transform 1.5s, opacity 1.5s;
-		transition: transform 1.5s, opacity 1.5s;
-
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-	}
-		.background-picture-right.is-visible {
-			opacity: 1;
-			transform: rotate(10deg);
-		}
-}
-
-
-
 /* --------------------------------
 
 IE 9 이하 호환성 안내 메시지
@@ -693,7 +608,6 @@ article {
 
 	@media only screen and (min-width: 768px) {
 		article.scale-down {
-			border: 20px solid rgb(255, 255, 255);
 			box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
 			-moz-transform: scale(.5) rotate(-3deg) translateX(-30%);
 			-ms-transform: scale(.5) rotate(-3deg) translateX(-30%);

@@ -4,7 +4,6 @@ $(document).ready(function () {
 	var $article = $('article');
 	var $header = $('.blog-logo, .blog-open-nav');
 	var $posting = $('.blog-post');
-	var $images = $('[class^="background-picture"]');
 
 	var previousPostion = 0;
 	var previousDirection = undefined;
@@ -45,7 +44,6 @@ $(document).ready(function () {
 
 		$navigation.toggleClass('is-visible', true);
 		$article.toggleClass('scale-down', true);
-		$images.toggleClass('is-visible', true);
 
 		return false;
 	});
@@ -59,13 +57,11 @@ $(document).ready(function () {
 		if (status == 'open-nav') {
 			$navigation.toggleClass('is-visible', true);
 			$article.toggleClass('scale-down', true);
-			$images.toggleClass('is-visible', true);
 		}
 
 		else {
 			$navigation.toggleClass('is-visible', false);
 			$article.toggleClass('scale-down', false);
-			$images.toggleClass('is-visible', false);
 		}
 
 		return false;
