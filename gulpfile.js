@@ -54,8 +54,8 @@ gulp.task('static-server', ['build'], function () {
 	// dist 디렉토리를 기준으로 웹서버 시작
 	browserSync.init({
 			server: {
-					baseDir: "./dist",
-					index: "skin.html"
+					baseDir: './dist',
+					index: 'skin.html'
 			}
 	});
 });
