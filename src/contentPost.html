@@ -31,6 +31,27 @@
 				</div>
 				</s_tag_label>
 
+				<s_article_related>
+				<div class="blog-post-related">
+					<h3>[##_article_rep_category_##] 관련 포스팅 <a href="[##_article_rep_category_link_##]"> 더보기</a> <small><i class="fa fa-plus-circle text-info"></i></small></h3>
+					<ul class="blog-post-related-list">
+						<s_article_related_rep>
+							<li class="blog-post-related-list-item [##_article_related_rep_type_##]" data-title="[##_article_related_rep_title_##]">
+								<a href="[##_article_related_rep_link_##]">
+									<s_article_related_rep_thumbnail>
+										<div class="blog-post-related-list-item-thumb">
+											<img src="//i1.daumcdn.net/thumb/C400x300/?fname=[##_article_related_rep_thumbnail_link_##]" alt="">
+										</div>
+									</s_article_related_rep_thumbnail>
+									<div class="blog-post-related-list-item-title">[##_article_related_rep_title_##]</div>
+								</a>
+								<div class="blog-post-related-list-item-date">[##_article_related_rep_date_##]</div>
+							</li>
+						</s_article_related_rep>
+					</ul>
+				</div>
+				</s_article_related>
+
 				<!-- 티스토리 코멘트 영역 -->
 				<div class="blog-post-comments">
 				<h3><b class="text-info">[##_article_rep_rp_cnt_##]</b> 개의 댓글 <small><i class="fa fa-comment text-danger"></i></small></h3>
@@ -65,7 +86,7 @@
 						<div class="form-group">
 							<input id="name" class="comment-input" name="[##_rp_input_name_##]" placeholder="이름" value="[##_guest_name_##]" type="text" value=""/><br/>
 							<input id="pass" class="comment-input" name="[##_rp_input_password_##]" placeholder="패스워드" value="" type="password"/><br/>
-							<input id="url" name="[##_rp_input_homepage_##]" class="comment-input"  placeholder="홈페이지" value="[##_guest_homepage_##]" type="text" />
+							<input id="url" name="[##_rp_input_homepage_##]" class="comment-input"	placeholder="홈페이지" value="[##_guest_homepage_##]" type="text" />
 						</div>
 						</s_rp_guest>
 						</s_rp_member>

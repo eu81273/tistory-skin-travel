@@ -26,12 +26,16 @@ input, textarea, pre *	{
 
 /* 기본 폰트 및 배경 설정 */
 body {
-	font-family: 'Hanna', 'Malgun Gothic';
-	/*font-family: 'Noto Sans KR', 'Malgun Gothic';*/
-	font-size: 1.5rem;
+	font-family: 'Noto Sans KR', 'Malgun Gothic';
+	font-size: 12px;
+	font-weight: 700;
 	color: #000000;
 	background-color: #403438;
 	overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Hanna';
 }
 
 /* 화면 넓이가 768 보다 크면, */
@@ -743,7 +747,7 @@ article {
 			background-color: #ffffff;
 			padding: 4em 0;
 			min-height: 100vh;
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 
 			/* break word */
 			-ms-word-break: break-all;
@@ -827,38 +831,90 @@ article {
 					border-top: 1px solid #999;
 				}
 
-				/* 티스토리 카테고리 글 스타일 트윅 */
-				article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category {
-					border-top:1px solid #E5E5E5;
-					border-bottom:1px solid #E5E5E5;
-					border-left:none;
-					border-right:none;
-					clear:both;
-					margin:5rem 0;
-					padding:5rem 0;
+
+				/* 관련 글 */
+				article .blog-post .blog-post-content-wrapper .blog-post-related {
+					width: 90%;
+					max-width: 1000px;
+					margin: 0 auto;
 				}
-					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category * {
-						color: inherit !important;
+
+					article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list {
+						list-style: none;
+						display: block;
+						white-space: nowrap;
+						overflow-x: auto;
+						overflow-y: hidden;
 					}
-					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category h4 {
-						border-bottom: none !important;
-						font-size: 2.3rem !important;
-						margin: 0 0 1em!important;
-					}
-					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th {
-						font-size: 1.5rem !important;
-						word-break: break-all;
-					}
-						article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th span {
-							display: none;
+					@media only screen and (min-width: 768px) {
+						article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list {
+							white-space: normal;
+							overflow-x: inherit;
+							overflow-y: inherit;
 						}
-						article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category th a.current {
-							border: none !important;
-						}
-					article .blog-post .blog-post-content-wrapper .blog-post-content div.another_category a:hover {
-						opacity: .7;
 					}
 
+						article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item {
+							display: inline-block;
+							white-space: normal;
+							width: 200px;
+							margin-right: 20px;
+							margin-bottom: 20px;
+							vertical-align: top;
+						}
+
+						article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item.text_type::before {
+							width: 200px;
+							height: 140px;
+							display: block;
+							padding: 20px;
+							content: attr(data-title);
+							text-overflow: ellipsis;
+							font-size: 2rem;
+							color: #fff;
+							overflow: hidden;
+							background: repeating-linear-gradient(-30deg,
+								#ccc,
+								#ccc 2px,
+								#bbb 2px,
+								#bbb 4px
+							);
+						}
+
+							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-thumb {
+								width: 200px;
+								height: 140px;
+								overflow: hidden;
+							}
+
+							@media only screen and (min-width: 768px) {
+								article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item .blog-post-related-list-item-thumb {
+									opacity: 1;
+									-webkit-backface-visibility: hidden;
+									backface-visibility: hidden;
+									-webkit-transition: opacity 0.4s;
+									-moz-transition: opacity 0.4s;
+									transition: opacity 0.4s;
+								}
+								article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item:hover .blog-post-related-list-item-thumb {
+									opacity: .6;
+								}
+							}
+
+							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-thumb img {
+								width: 300px;
+							}
+
+							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-title {
+								font-size: 1.5rem;
+								padding: 10px 10px 0;
+							}
+
+							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-date {
+								font-size: 1.3rem;
+								color: #999;
+								padding: 0 10px 10px;
+							}
 
 			/* 태그 */
 			article .blog-post .blog-post-content-wrapper .blog-post-tags {
