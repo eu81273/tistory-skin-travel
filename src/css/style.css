@@ -868,7 +868,7 @@ article {
 							height: 140px;
 							display: block;
 							padding: 20px;
-							content: attr(data-title);
+							content: /*attr(data-title)*/ '';
 							text-overflow: ellipsis;
 							font-size: 2rem;
 							color: #fff;
@@ -908,12 +908,6 @@ article {
 							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-title {
 								font-size: 1.5rem;
 								padding: 10px 10px 0;
-							}
-
-							article .blog-post .blog-post-content-wrapper .blog-post-related .blog-post-related-list .blog-post-related-list-item-date {
-								font-size: 1.3rem;
-								color: #999;
-								padding: 0 10px 10px;
 							}
 
 			/* 태그 */
