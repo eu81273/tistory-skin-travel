@@ -870,6 +870,7 @@ article {
 							padding: 20px;
 							content: /*attr(data-title)*/ '';
 							text-overflow: ellipsis;
+							border-radius: 5px;
 							font-size: 2rem;
 							color: #fff;
 							overflow: hidden;
@@ -885,6 +886,7 @@ article {
 								width: 200px;
 								height: 140px;
 								overflow: hidden;
+								border-radius: 5px;
 							}
 
 							@media only screen and (min-width: 768px) {
