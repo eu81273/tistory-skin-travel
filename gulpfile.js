@@ -3,13 +3,21 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cleanCss = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var plumber = require('gulp-plumber');
 
 //자바스크립트 파일을 하나로 합치고 압축한다.
 gulp.task('optimize-js', function () {
-	return gulp.src(['src/js/!(main).js', 'src/js/main.js'])
-		.pipe(plumber())
-		.pipe(concat('main.min.js'))
+	return browserify('src/js/main.js')
+		.bundle()
+		.on('error', function (err) {
+			console.error(err);
+			this.emit('end');
+		})
+		.pipe(source('main.min.js'))
+		.pipe(buffer())
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/images'))
 		.pipe(browserSync.reload({stream: true}));
