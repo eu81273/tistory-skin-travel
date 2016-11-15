@@ -1,5 +1,3 @@
-require('./prism');
-
 $(document).ready(function () {
 
 	var $navigation = $('nav, .blog-overlay');
