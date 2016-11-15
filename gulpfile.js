@@ -1,9 +1,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var cleanCss = require('gulp-clean-css');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
 var plumber = require('gulp-plumber');
+var gulpif = require('gulp-if');
 
 //자바스크립트 파일을 하나로 합치고 압축
 gulp.task('optimize-js', function () {
@@ -17,10 +20,14 @@ gulp.task('optimize-js', function () {
 
 //CSS 파일을 하나로 합치고 압축
 gulp.task('optimize-css', function () {
-	return gulp.src(['src/css/!(style).css', 'src/css/style.css'])
+	return gulp.src(['src/css/*.css', 'src/css/*.scss'])
 		.pipe(plumber())
+		.pipe(gulpif(function (file) {
+			return file.path.match('.scss');
+		}, sass()))
 		.pipe(concat('style.css'))
-		.pipe(cleanCss({compatibility: 'ie10'}))
+		.pipe(autoprefixer())
+		.pipe(cleanCSS({compatibility: 'ie10'}))
 		.pipe(gulp.dest('dist/'))
 		.pipe(browserSync.reload({stream: true}));
 });
@@ -66,7 +73,7 @@ gulp.task('build', ['serve-xml', 'serve-images', 'optimize-js', 'optimize-css','
 // 파일 변경 감지
 gulp.task('watch', function () {
 	gulp.watch('src/js/*.js', ['optimize-js']);
-	gulp.watch('src/css/*.css', ['optimize-css']);
+	gulp.watch('src/css/*.*css', ['optimize-css']);
 	gulp.watch('src/*.html', ['concat-html']);
 	gulp.watch('src/index.xml', ['serve-xml']);
 	gulp.watch('src/images/*', ['serve-images']);
